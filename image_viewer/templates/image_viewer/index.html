@@ -1,0 +1,9 @@
+{% if gallery_list %}
+<ul>
+  {% for gallery in gallery_list %}
+  <li><a href="{% url 'image_viewer:gallery' gallery.title %}">{{gallery.title}}</a></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No galleries available</p>
+{% endif %}
