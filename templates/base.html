@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="basic portfolio project" />
+  <meta name="author" content="leatolu" />
+  <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" />
+  {% block styles %}{% endblock %}
+  <title>{% block title %}Basic Portfolio Site{% endblock %}</title>
+</head>
+
+<body>
+  <h1>This is the basic portfolio project</h1>
+  <div id="content">
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'gallery/gallery.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="slideshow">
+  {% for slide in slides %}
+  <div class="slide">
+    {% for image in slide.images.all %}
+    <div class="subslide">
+      <img class="slideimage" id="{{image.name}}" alt="{{image.name}}" src="{% static image.path %}" />
+    </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
